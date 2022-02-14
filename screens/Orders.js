@@ -10,8 +10,8 @@ class Orders extends React.Component {
             orders: []
         }
     }
-    componentDidMount(){
-        database.ref('/user/'+auth.currentUser.uid+'/centres').on('value', (snapshot) => {
+    loadData=async()=>{
+        await database.ref('/user/'+auth.currentUser.uid+'/centres').on('value', (snapshot) => {
             snapshot.forEach((child) => {
                 this.setState({
                     orders: [...this.state.orders, child.val()]
@@ -19,6 +19,9 @@ class Orders extends React.Component {
             })
             console.log(this.state.orders)
         })
+    }
+    componentDidMount(){
+        this.loadData();
         
     }
     render(){
@@ -32,7 +35,7 @@ class Orders extends React.Component {
                     <View style={{backgroundColor:'white',  marginTop: 20}}>
                 
                 <Text style={styles.itemText}>{item.time}</Text>
-                    <Image source={centres[item.id-1].img} style={styles.image}/>
+                    <Image source={{uri: centres[item.id-1].img}} style={styles.image}/>
                     <Text style={styles.itemText}>{centres[item.id-1].name}</Text>
                  </View>
         }/>
@@ -62,7 +65,7 @@ const styles = StyleSheet.create({
     image:{
         width: 350,
         height: 350,
-        resize: "contain",
+        resizeMode: "contain",
         alignSelf: "center",
         marginTop: 10,
     },

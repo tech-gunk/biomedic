@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "firebase-auth-react-native",
+    "name": "biomedic",
     "slug": "snack-98997eb4-da92-4c0b-936a-27107d0fe925",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.gif",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "biomedic.io"
     },
     "web": {
       "favicon": "./assets/favicon.png"

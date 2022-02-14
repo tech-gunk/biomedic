@@ -16,6 +16,7 @@ import {
 import CentresScreen from './screens/Centres';
 import Centre from './screens/Centre';
 import Register from './screens/Register';
+import WelcomeScreen from './screens/WelcomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,7 @@ export default function App() {
         headerTintColor: 'white',
         headerStyle: { backgroundColor: '#406882' },
       }}>
+        <Stack.Screen name="Biomedic" component={WelcomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Centres" component={CentresScreen} />

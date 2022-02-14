@@ -14,28 +14,32 @@ class Centre extends React.Component {
         return(
             <View style={styles.container}>
                 <Image
-                  source={this.props.route.params.centre.img}
+                  source={{uri: this.props.route.params.centre.img}}
                   style={styles.image}
                 />
                 <Text style={{
                     fontSize: 25,
                     color: 'white',
-                    marginBottom: 15
+                    marginBottom: 15,
+                    textAlign: 'center'
                 }}>{this.props.route.params.centre.name}</Text>
                 <Text style={{
                     fontSize: 20,
                     color: 'white',
-                    marginBottom: 15
+                    marginBottom: 15,
+                    textAlign: 'center'
                 }}>{this.props.route.params.centre.cont}</Text>
                 <Text style={{
                     fontSize: 20,
                     color: 'white',
-                    marginBottom: 15
+                    marginBottom: 15,
+                    textAlign: 'center'
                 }}>{this.props.route.params.centre.city}</Text>
                 <Text style={{
                     fontSize: 15,
                     color: 'white',
-                    margin: 15
+                    margin: 15,
+                    textAlign: 'center'
                 }}>{this.props.route.params.centre.add}</Text>
       <TouchableOpacity
         onPress={this.register}
@@ -63,7 +67,7 @@ const styles = StyleSheet.create({
     image:{
         width: 350,
         height: 350,
-        resize: "contain",
+        resizeMode: "contain",
         alignSelf: "center",
         marginTop: 10,
         marginBottom: 20

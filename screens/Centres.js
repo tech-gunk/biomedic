@@ -21,7 +21,7 @@ class CentresScreen extends React.Component {
                         () => this.props.navigation.navigate('Centre', {centre: item})
                  }>
 
-                    <Image source={item.img} style={styles.image}/>
+                    <Image source={{uri: item.img}} style={styles.image}/>
                     <Text style={styles.itemText}>{item.name}</Text>
                  </TouchableOpacity>
                  </View>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     image:{
         width: 350,
         height: 350,
-        resize: "contain",
+        resizeMode: "contain",
         alignSelf: "center",
         marginTop: 10,
     },
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
         fontSize: 25,
         marginTop: 10,
         marginBottom: 10,
+        textAlign: 'center'
     }
 });
 

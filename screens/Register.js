@@ -12,15 +12,19 @@ class Register extends React.Component {
         }
     }
     registerUser = () => {
-        database.ref('/user/'+auth.currentUser.uid+'/centres').push({
+        if(this.state.name && this.state.phone && this.state.address){
+          database.ref('/user/'+auth.currentUser.uid+'/centres').push({
             id: this.props.route.params.centre.id,
             address: this.state.address,
             name: this.state.name,
             phone: this.state.phone,
-            time: new Date().getTime()
+            time: new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) 
         }).then(()=>{
-        alert('Registered Successfully');   
+        Alert.alert('Registered Successfully');   
         });
+        }else{
+            Alert.alert('Please fill all the details');
+        }
     }
     render(){
         return(
